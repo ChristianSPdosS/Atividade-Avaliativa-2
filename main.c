@@ -31,7 +31,16 @@ ii. Caso numero_alunos for menor ou igual a 40, a sala deve ser JA1
 iii. Caso numero_alunos for menor que 10, não será fechado turma, logo sala deve ser 0. Em seguida, imprima na tela o número da sala, contando que, se o número da sala for 0, imprima que não
 */
 
-//a)
+
+
+
+
+
+
+//a)  (2 pontos) Defina uma estrutura data com os seguintes atributos:/ dia: inteiro
+// mes: inteiro
+// ano: inteiro
+//Utilize typedef e defina o tipo de dado t_data, a partir da estrutura acima. 
 
 #include <stdio.h>
 
@@ -39,7 +48,13 @@ typedef struct {
 int dia, mes, ano;
 }t_data;
 
-//b)
+//b) (2 pontos) Defina uma estrutura turma com os seguintes atributos:
+// nome: string
+// codigo: string
+// numero_alunos: float
+// data_inicio: t_data
+// numero_sala: inteiro
+//Utilize typedef e defina o tipo de dado t_turma, a partir da estrutura acima. 
 
 typedef struct {
 char nome [20]; 
@@ -49,7 +64,8 @@ t_data data_inicio;
 int numero_da_sala;
 }t_turma;
 
-//c)
+//c) (2 pontos) Crie uma variável da estrutura turma e, em seguida, solicite ao usuário fornecer os dados da turma. 
+
 
 int main(){
 
@@ -67,14 +83,51 @@ t_turma turma1;
   printf("Digite o número da sala:\n");
   scanf("%d" , &turma1.numero_da_sala);
 
-  //d)
+  t_turma apc_ii = {
+  .nome = "APCII",
+  .codigo = "CCO121AB",
+  .numero_de_alunos = 0,
+  .data_inicio = 07 ,03 ,2022,
+  .numero_da_sala = 12
+  };
+
+ //d) (2 pontos) Utilizando um ponteiro, modifique o valor do número de sala, //previamente declarado e preenchido
+//pelo usuário (itens a) e b)). 
+  
   int *ptr= &turma1.numero_da_sala;
 
   printf("O número da sala declarado foi: %d , escolha um novo número da sala:\n" , *ptr);
   scanf("%d" , &*ptr);
-  
-  
 
+  //e) (2 pontos) Considere que já possuímos uma variável denominada apc_ii do tipo estrutura de turma especificado
+//no item a). Escreva o algoritmo necessário para verificar a quantidade total de alunos e verificar os seguintes
+//casos:
+//i. Caso numero_alunos for maior que 40, a sala deve ser JA4/3,
+//ii. Caso numero_alunos for menor ou igual a 40, a sala deve ser JA1
+//iii. Caso numero_alunos for menor que 10, não será fechado turma, logo sala deve ser 0. Em seguida, imprima na tela o número da sala, contando que, se o número da sala for 0, imprima que não.
+
+  printf("Defina o número de alunos da turma de %s: \n" , apc_ii.nome);
+  scanf("%f" , &apc_ii.numero_de_alunos);
+
+  if (apc_ii.numero_de_alunos > 40){
+    *apc_ii.nome == {"Ja4/3";
+  }
+  else if(apc_ii.numero_de_alunos <= 40){
+    *apc_ii.nome == "JA1";
+  }
+else if(apc_ii.numero_de_alunos < 10){
+  *apc_ii.nome == '0';
+}
+
+  {
+  if(apc_ii.nome == "0"){
+    printf("Não!!!");
+  }
+
+  else {
+    printf("%d" , apc_ii.numero_da_sala);
+  }
+    }
 
 
 
