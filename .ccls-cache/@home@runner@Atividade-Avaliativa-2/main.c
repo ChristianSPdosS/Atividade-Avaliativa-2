@@ -110,8 +110,9 @@ t_turma turma1;
   scanf("%f" , &apc_ii.numero_de_alunos);
 
   if (apc_ii.numero_de_alunos > 40){
-    *apc_ii.nome == {"Ja4/3";
+    apc_ii.nome == {"Ja4/3";
   }
+  
   else if(apc_ii.numero_de_alunos <= 40){
     *apc_ii.nome == "JA1";
   }
